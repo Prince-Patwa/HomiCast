@@ -7,7 +7,7 @@
 
     <!-- Slider Start -->
     <div class="row">
-        <div class="col-11 mx-auto">
+        <div class="col-12 mx-auto">
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -27,39 +27,9 @@
 
     <!-- Buy Section -->
     <div class="row mt-5">
-        <div class="col-11 mx-auto">
-            <h2 class="text-white" id="records">Homes in Gonda</h2>
+        <div class="col-12 mx-auto text-center">
+            <h2 class="text-white" id="records">Homes for sell in Gonda</h2>
         </div>
-        {% for i in "3" %} {# Example loop - replace with dynamic content if needed #}
-        {% comment %} <div class="col-md-6 col-lg-4 mt-4">
-            <div class="card rounded-3 shadow cardItem h-100">
-                <div id="carouselExample{{ i }}" class="carousel slide">
-                    <div class="carousel-inner rounded-3">
-                        <div class="carousel-item active">
-                            <img src="{% static 'images/buy/asset 3.jpeg' %}" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{% static 'images/buy/asset 4.jpeg' %}" class="d-block w-100" alt="...">
-                        </div>
-                        <!-- More items as needed -->
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample{{ i }}" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample{{ i }}" data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-                <div class="p-3">
-                    <p class="fw-bold fs-5">₹ 1.2 Cr.</p>
-                    <p class="fw-bold">3 BHK</p>
-                    <p><i class="fa-solid fa-location-dot"></i> Off Ragarganj Road</p>
-                    <p><i class="fa-regular fa-square"></i> 1,885 sqft</p>
-                </div>
-            </div>
-        </div> {% endcomment %}
         {% for sell in sells %}
             <div class="col-lg-4 my-4">
                 <img class="thumbnail w-100" src="{{sell.image.url}}">
@@ -76,14 +46,13 @@
                     <a class="btn btn-outline-success" href="{{rent.pimages.url}}" target="_blank">View Images</a>
                 </div>
             </div>
-            {% endfor %}
         {% endfor %}
     </div>
     <!-- Buy Section End -->
 
     <!-- Why HomiCast -->
     <div class="row mt-5">
-        <div class="col-11 mx-auto">
+        <div class="col-12 mx-auto text-center">
             <h2 class="text-white" id="records">Why HomiCast trustable</h2>
         </div>
         {% comment %} <div class="d-flex flex-wrap gap-3 justify-content-center mt-4">
@@ -172,36 +141,9 @@
 
     <!-- Rent Section -->
     <div class="row mt-5">
-        <div class="col-11 mx-auto">
+        <div class="col-12 mx-auto text-center mt-5">
             <h2 class="text-white" id="records">Homes for Rent in Gonda</h2>
         </div>
-        {% for i in "3" %}
-        {% comment %} <div class="col-md-6 col-lg-4 mt-4">
-            <div class="card rounded-3 shadow cardItem h-100">
-                <div id="carouselExampleRent{{ i }}" class="carousel slide">
-                    <div class="carousel-inner rounded-3">
-                        <div class="carousel-item active">
-                            <img src="{% static 'images/buy/asset 16.jpeg' %}" class="d-block w-100" alt="...">
-                        </div>
-                        <!-- More items as needed -->
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRent{{ i }}" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRent{{ i }}" data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-                <div class="p-3">
-                    <p class="fw-bold fs-5">₹ 15,000</p>
-                    <p class="fw-bold">3 BHK</p>
-                    <p><i class="fa-solid fa-location-dot"></i> Off Ragarganj Road</p>
-                    <p><i class="fa-regular fa-square"></i> 1,885 sqft</p>
-                </div>
-            </div>
-        </div> {% endcomment %}
         {% for rent in rents %}
             <div class="col-lg-4 my-4">
                 <img class="thumbnail w-100" src="{{rent.image.url}}">
@@ -218,7 +160,6 @@
                     <a class="btn btn-outline-success" href="{{rent.pimages.url}}" target="_blank">View Images</a>
                 </div>
             </div>
-            {% endfor %}
         {% endfor %}
     </div>
     <!-- Rent Section End -->
