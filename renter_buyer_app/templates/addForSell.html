@@ -1,0 +1,57 @@
+{% extends 'sellerbase.html' %}
+
+{% load static %}
+{% block seller %}
+<div class="row">
+    <div class="col-sm-12">
+        <h1 class="text-center">Add Home for Sell</h1>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table class="table w-90 mx-auto mt-5 table-bordered">
+                <tr>
+                    <td>Upload One Image for Thumbnail</td>
+                    <td>
+                        <input type="file" name="image" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Enter Price</td>
+                    <td>
+                        <input type="text" name="price" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Enter Apartment</td>
+                    <td>
+                        <input type="text" name="apartment" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Enter Area</td>
+                    <td>
+                        <input type="text" name="area" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Enter Location</td>
+                    <td>
+                        <textarea name="location" class="form-control"></textarea>
+                        <!-- <input type="number" name="location" class="form-control"> -->
+                    </td>
+                </tr>
+                <tr>
+                    <td>Upload File</td>
+                    <td>
+                        <input type="file" name="pimages" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="text-center">
+                        <button type="submit" class="btn btn-success">Upload</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+{% endblock %}

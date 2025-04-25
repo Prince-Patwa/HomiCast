@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<div class="row">
+    <div class="col-sm-10 mx-auto">
+        <div class="row">
+            
+            {% for sell in sells %}
+            <div class="col-lg-4 my-4">
+                <img class="thumbnail w-100" src="{{sell.image.url}}">
+                <div class="box-element product">
+                    <h4 style="display: inline-block;"><strong>₹ {{sell.price}}</strong></h4>
+                    <h6 style="display: inline-block; float:right;"><strong>{{sell.apartment}} BHK</strong></h6>
+                    <p><strong>Location : </strong>{{sell.location}}</p>
+                    <span style="display: inline-block; float:right;"><strong>House ID :</strong> {{sell.hid}}</span>
+                    <p><strong>Owner ID :</strong> {{sell.emailId}}</p>
+                    <hr>
+                    <a href="{% url 'rentSendOtp' %}" data-product="{{rent.hid}}" data-action=""
+                        class="btn btn-outline-secondary add-btn update-cart">Contact</a>
+
+                    <a class="btn btn-outline-success" href="{{rent.pimages.url}}" target="_blank">View Images</a>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block title %}
+Sell
+{% endblock %}

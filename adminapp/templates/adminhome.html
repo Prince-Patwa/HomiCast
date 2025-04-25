@@ -1,0 +1,141 @@
+{% extends 'adminbase.html' %}
+
+{% load static %}
+{% block admin %}
+<div class="row mt-3">
+    <div class="col-sm-4">
+        <div class="card">
+            <img src="{% static 'images/admin/users.png' %}" class="card-img-top" alt="...">
+            <!-- <div style="height: 200px; background-image: url('/static/images/studentCartoon.png'); background-repeat: no-repeat; background-size: cover;">
+             </div> -->
+            <a href="{% url 'adminapp:viewuser' %}" class="text-decoration-none text-dark">
+                <div class="card-body">
+                    <h3 class="text-center"><i class="fa-solid fa-users"></i> {{users_count}} +</h3>
+                    <p class="text-center">All Users</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    {% comment %} <div class="col-sm-4">
+        <div class="card">
+            <img src="{% static 'images/admin/owner.png' %}" class="card-img-top" alt="...">
+            <!-- <div style="height: 200px; background-image: url('/static/images/teacherCartoon.png'); background-repeat: no-repeat; background-size: cover;">
+             </div> -->
+             <a href="#" class="text-decoration-none text-dark">
+            <div class="card-body">
+                <h3 class="text-center"><i class="fa-solid fa-chalkboard-user"></i></h3>
+                <p class="text-center">Owners/Sellers</p>
+            </div>
+            </a>
+        </div>
+    </div> {% endcomment %}
+    <div class="col-sm-4">
+        <div class="card">
+            <img src="{% static 'images/admin/enquiryCartoon.png' %}" class="card-img-top" alt="...">
+            <!-- <div style="height: 200px; background-image: url('/static/images/teacherCartoon.png'); background-repeat: no-repeat; background-size: cover;">
+             </div> -->
+             <a href="{% url 'adminapp:viewenquiry' %}" class="text-decoration-none text-dark">
+            <div class="card-body">
+                <h3 class="text-center"><i class="fa-solid fa-person-circle-question"></i> {{enq_count}}</h3>
+                <p class="text-center">Enquiry</p>
+            </div>
+            </a>
+        </div>
+    </div>
+
+    {% comment %} <div class="col-sm-4">
+        <div class="card">
+            <img src="{% static 'images/admin/renter.png' %}" class="card-img-top" alt="...">
+            <!-- <div style="height: 200px; background-image: url('/static/images/studentCartoon.png'); background-repeat: no-repeat; background-size: cover;">
+             </div> -->
+             <a href="#" class="text-decoration-none text-dark">
+            <div class="card-body">
+                <h3 class="text-center"><i class="fa-solid fa-clipboard-user"></i></h3>
+                <p class="text-center">Renter/Buyer</p>
+            </div>
+            </a>
+        </div>
+    </div> {% endcomment %}
+
+    <div class="col-sm-4">
+        <div class="card">
+            <img src="{% static 'images/admin/notiCartoon.png' %}" class="card-img-top" alt="...">
+            <!-- <div style="height: 200px; background-image: url('/static/images/teacherCartoon.png'); background-repeat: no-repeat; background-size: cover;">
+             </div> -->
+             <a href="#" class="text-decoration-none text-dark">
+            <div class="card-body">
+                <h3 class="text-center"><i class="fa-regular fa-comments"></i></h3>
+                <p class="text-center">Notifications</p>
+            </div>
+            </a>
+        </div>
+    </div>
+
+    {% comment %} <div class="col-sm-3">
+        <div class="card">
+            <img src="{% static 'images/admin/subjectCartoon.png' %}" class="card-img-top" alt="...">
+            <!-- <div style="height: 200px; background-image: url('/static/images/teacherCartoon.png'); background-repeat: no-repeat; background-size: cover;">
+             </div> -->
+             <a href="#" class="text-decoration-none text-dark">
+            <div class="card-body">
+                <h3 class="text-center"><i class="fa-solid fa-book"></i></h3>
+                <p class="text-center">Subjects</p>
+            </div>
+            </a>
+        </div>
+    </div> {% endcomment %}
+</div>
+
+<div class="row mt-5">
+    {% comment %} <div class="col-sm-4">
+        <div class="card">
+            <img src="{% static 'images/admin/enquiryCartoon.png' %}" class="card-img-top" alt="...">
+            <!-- <div style="height: 200px; background-image: url('/static/images/teacherCartoon.png'); background-repeat: no-repeat; background-size: cover;">
+             </div> -->
+             <a href="{% url 'adminapp:viewenquiry' %}" class="text-decoration-none text-dark">
+            <div class="card-body">
+                <h3 class="text-center"><i class="fa-solid fa-person-circle-question"></i> {{enq_count}}</h3>
+                <p class="text-center">Enquiry</p>
+            </div>
+            </a>
+        </div>
+    </div> {% endcomment %}
+    <div class="col-sm-4">
+        {% comment %} <div class="card">
+            <img src="{% static 'images/admin/classCartoon.png' %}" class="card-img-top" alt="...">
+            <!-- <div style="height: 200px; background-image: url('/static/images/teacherCartoon.png'); background-repeat: no-repeat; background-size: cover;">
+             </div> -->
+             <a href="#" class="text-decoration-none text-dark">
+            <div class="card-body">
+                <h3 class="text-center"><i class="fa-solid fa-laptop"></i></h3>
+                <p class="text-center">Classes</p>
+            </div>
+            </a>
+        </div> {% endcomment %}
+    </div>
+    {% comment %} <div class="col-sm-4">
+        <div class="card">
+            <img src="{% static 'images/admin/notiCartoon.png' %}" class="card-img-top" alt="...">
+            <!-- <div style="height: 200px; background-image: url('/static/images/teacherCartoon.png'); background-repeat: no-repeat; background-size: cover;">
+             </div> -->
+             <a href="#" class="text-decoration-none text-dark">
+            <div class="card-body">
+                <h3 class="text-center"><i class="fa-regular fa-comments"></i></h3>
+                <p class="text-center">Notifications</p>
+            </div>
+            </a>
+        </div>
+    </div> {% endcomment %}
+    {% comment %} <div class="col-sm-3">
+        <div class="card">
+            <img src="{% static 'images/admin/parentCortoon.png' %}" class="card-img-top" alt="...">
+            <!-- <div style="height: 200px; background-image: url('/static/images/teacherCartoon.png'); background-repeat: no-repeat; background-size: cover;">
+             </div> -->
+            <div class="card-body">
+                <h3 class="text-center"><i class="fa-regular fa-comments"></i></h3>
+                <p class="text-center">Today Absent Students</p>
+            </div>
+        </div>
+    </div> {% endcomment %}
+</div>
+{% endblock %}

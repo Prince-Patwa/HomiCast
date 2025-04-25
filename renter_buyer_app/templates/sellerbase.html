@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seller Dashboard</title>
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+    <style>
+        .sidebar {
+            min-height: 100vh;
+            background-color: #fff9f0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar .nav-link {
+            font-weight: 500;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 8px;
+        }
+
+        .sidebar .nav-link:hover {
+            background-color: #e7f1ff;
+            color: #0d6efd;
+        }
+
+        .sidebar .nav-link.active {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .dashboard-header {
+            background-color: #0d6efd;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dashboard-header img {
+            height: 60px;
+        }
+
+        .dashboard-header h1 {
+            font-size: 1.8rem;
+        }
+
+        .user-dropdown .dropdown-menu {
+            left: auto;
+            right: 0;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-header h1 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color: #f8f9fa;">
+    <!-- Header -->
+    <div class="dashboard-header">
+        <div class="d-flex align-items-center gap-3">
+            <img src="{% static 'images/logo.png' %}" alt="Logo" />
+            <h1 class="mb-0">Welcome, Seller Panel</h1>
+        </div>
+        <div class="dropdown user-dropdown">
+            <a href="#" class="text-white text-decoration-none fw-bold me-2">{{ seller.name }}</a>
+            <button class="btn btn-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-user"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar p-4">
+                <div class="text-center mb-4">
+                    {% comment %} <img src="{% static 'images/logo.png' %}" class="img-fluid mb-2" style="width: 100px;" /> {% endcomment %}
+                    <h4><span class="text-primary">Homi</span><span class="text-dark">Cast</span></h4>
+                </div>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'renter_buyer_app:sellerhome' %}">
+                            <i class="fa-solid fa-house me-2"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'renter_buyer_app:addForSell' %}">
+                            <i class="fa-solid fa-plus me-2"></i> Add for Sell
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa-solid fa-eye me-2"></i> View Rent Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa-solid fa-calendar me-2"></i> Annually
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'renter_buyer_app:sellerViewEnquiry' %}">
+                            <i class="fa-solid fa-envelope-open-text me-2"></i> View Enquiries
+                        </a>
+                    </li>
+                    <li class="border-top my-3"></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa-solid fa-user-cog me-2"></i> Account Settings
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa-solid fa-sign-out-alt me-2"></i> Sign Out
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Dynamic Page Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-4">
+                {% block seller %}
+                {% endblock %}
+            </main>
+        </div>
+    </div>
+
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+</body>
+
+</html>

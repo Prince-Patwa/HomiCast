@@ -1,0 +1,230 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block body %}
+
+<!-- Responsive container -->
+<div class="container-fluid px-3">
+
+    <!-- Slider Start -->
+    <div class="row">
+        <div class="col-11 mx-auto">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/slider1.png' %}" class="d-block w-100 slider" alt="slide 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/slider2.png' %}" class="d-block w-100 slider" alt="slide 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/slider3.png' %}" class="d-block w-100 slider" alt="slide 3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Slider End -->
+
+    <!-- Buy Section -->
+    <div class="row mt-5">
+        <div class="col-11 mx-auto">
+            <h2 class="text-white" id="records">Homes in Gonda</h2>
+        </div>
+        {% for i in "3" %} {# Example loop - replace with dynamic content if needed #}
+        {% comment %} <div class="col-md-6 col-lg-4 mt-4">
+            <div class="card rounded-3 shadow cardItem h-100">
+                <div id="carouselExample{{ i }}" class="carousel slide">
+                    <div class="carousel-inner rounded-3">
+                        <div class="carousel-item active">
+                            <img src="{% static 'images/buy/asset 3.jpeg' %}" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'images/buy/asset 4.jpeg' %}" class="d-block w-100" alt="...">
+                        </div>
+                        <!-- More items as needed -->
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample{{ i }}" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample{{ i }}" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="p-3">
+                    <p class="fw-bold fs-5">₹ 1.2 Cr.</p>
+                    <p class="fw-bold">3 BHK</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Off Ragarganj Road</p>
+                    <p><i class="fa-regular fa-square"></i> 1,885 sqft</p>
+                </div>
+            </div>
+        </div> {% endcomment %}
+        {% for sell in sells %}
+            <div class="col-lg-4 my-4">
+                <img class="thumbnail w-100" src="{{sell.image.url}}">
+                <div class="box-element product">
+                    <h4 style="display: inline-block;"><strong>₹ {{sell.price}}</strong></h4>
+                    <h6 style="display: inline-block; float:right;"><strong>{{sell.apartment}} BHK</strong></h6>
+                    <p><strong>Location : </strong>{{sell.location}}</p>
+                    <span style="display: inline-block; float:right;"><strong>House ID :</strong> {{sell.hid}}</span>
+                    <p><strong>Owner ID :</strong> {{sell.emailId}}</p>
+                    <hr>
+                    <a href="{% url 'rentSendOtp' %}" data-product="{{rent.hid}}" data-action=""
+                        class="btn btn-outline-secondary add-btn update-cart">Contact</a>
+
+                    <a class="btn btn-outline-success" href="{{rent.pimages.url}}" target="_blank">View Images</a>
+                </div>
+            </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+    <!-- Buy Section End -->
+
+    <!-- Why HomiCast -->
+    <div class="row mt-5">
+        <div class="col-11 mx-auto">
+            <h2 class="text-white" id="records">Why HomiCast trustable</h2>
+        </div>
+        {% comment %} <div class="d-flex flex-wrap gap-3 justify-content-center mt-4">
+            {% for x in "12345" %}
+            <div class="card bg-white rounded-2" style="width: 200px;">
+                <div class="card-body">
+                    <img src="{% static 'images/whyHomi1.png' %}" class="w-100 rounded-3" alt="">
+                    <p class="fw-bold mt-2">2 BHK in Tarabganj</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Off Tarabganj Road</p>
+                    <p><i class="fa-regular fa-square"></i> 1,200 sqft</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div> {% endcomment %}
+        <div class="row">
+            <div class="col-sm-11 mx-auto" id="back">
+                <div class="row my-5">
+                    <div class="col-sm-2">
+                        <p class="fs-2 ">We have sold many homes</p>
+                    </div>
+                    <div class="col-sm-2 rounded-2 bg-white card">
+                        <div class="card-body my-2">
+                            <img src="{% static 'images/whyHomi1.png' %}" class="w-100 rounded-3" alt="">
+                        </div>
+                        <span class="fw-bold">2 BHK in Tarabganj</span><br/>
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i> Off Tarabganj Road
+                        </span><br/>
+                        <span>
+                            <i class="fa-regular fa-square"></i> 1,200 sqft
+                        </span>
+                    </div>
+                    <div class="col-sm-2 rounded-2 bg-white card">
+                        <div class="card-body my-2">
+                            <img src="{% static 'images/whyHomi2.png' %}" class="w-100 rounded-3" alt="">
+                        </div>
+                        <span class="fw-bold">2 BHK in Aadampur</span><br/>
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i> Off Aadampur Road
+                        </span><br/>
+                        <span>
+                            <i class="fa-regular fa-square"></i> 1,600 sqft
+                        </span>
+                    </div>
+                    <div class="col-sm-2 rounded-2 bg-white card">
+                        <div class="card-body my-2">
+                            <img src="{% static 'images/whyHomi3.png' %}" class="w-100 rounded-3" alt="">
+                        </div>
+                        <span class="fw-bold">3 BHK in Belsar</span><br/>
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i> Off Belsar Road
+                        </span><br/>
+                        <span>
+                            <i class="fa-regular fa-square"></i> 2,580 sqft
+                        </span>
+                    </div>
+                    <div class="col-sm-2 rounded-2 bg-white card">
+                        <div class="card-body my-2">
+                            <img src="{% static 'images/whyHomi4.png' %}" class="w-100 rounded-3" alt="">
+                        </div>
+                        <span class="fw-bold">4 BHK in Lucknow</span><br/>
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i> Off Lucknow Road
+                        </span><br/>
+                        <span>
+                            <i class="fa-regular fa-square"></i> 3,000 sqft
+                        </span>
+                    </div>
+                    <div class="col-sm-2 rounded-2 bg-white card">
+                        <div class="card-body my-2">
+                            <img src="{% static 'images/whyHomi5.png' %}" class="w-100 rounded-3" alt="">
+                        </div>
+                        <span class="fw-bold">3 BHK in Umari</span><br/>
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i> Off Umari Road
+                        </span><br/>
+                        <span>
+                            <i class="fa-regular fa-square"></i> 1,200 sqft
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Why HomiCast End -->
+
+    <!-- Rent Section -->
+    <div class="row mt-5">
+        <div class="col-11 mx-auto">
+            <h2 class="text-white" id="records">Homes for Rent in Gonda</h2>
+        </div>
+        {% for i in "3" %}
+        {% comment %} <div class="col-md-6 col-lg-4 mt-4">
+            <div class="card rounded-3 shadow cardItem h-100">
+                <div id="carouselExampleRent{{ i }}" class="carousel slide">
+                    <div class="carousel-inner rounded-3">
+                        <div class="carousel-item active">
+                            <img src="{% static 'images/buy/asset 16.jpeg' %}" class="d-block w-100" alt="...">
+                        </div>
+                        <!-- More items as needed -->
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRent{{ i }}" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRent{{ i }}" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="p-3">
+                    <p class="fw-bold fs-5">₹ 15,000</p>
+                    <p class="fw-bold">3 BHK</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Off Ragarganj Road</p>
+                    <p><i class="fa-regular fa-square"></i> 1,885 sqft</p>
+                </div>
+            </div>
+        </div> {% endcomment %}
+        {% for rent in rents %}
+            <div class="col-lg-4 my-4">
+                <img class="thumbnail w-100" src="{{rent.image.url}}">
+                <div class="box-element product">
+                    <h4 style="display: inline-block;"><strong>₹ {{rent.price}}</strong></h4>
+                    <h6 style="display: inline-block; float:right;"><strong>{{rent.apartment}} BHK</strong></h6>
+                    <p><strong>Location : </strong>{{rent.location}}</p>
+                    <span style="display: inline-block; float:right;"><strong>House ID :</strong> {{rent.hid}}</span>
+                    <p><strong>Owner ID :</strong> {{rent.emailId}}</p>
+                    <hr>
+                    <a href="{% url 'rentSendOtp' %}" data-product="{{rent.hid}}" data-action=""
+                        class="btn btn-outline-secondary add-btn update-cart">Contact</a>
+
+                    <a class="btn btn-outline-success" href="{{rent.pimages.url}}" target="_blank">View Images</a>
+                </div>
+            </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+    <!-- Rent Section End -->
+
+</div>
+
+{% endblock %}
+
+{% block title %}HomiCast{% endblock %}

@@ -1,0 +1,75 @@
+.header{
+    background-image:linear-gradient(to right,rgb(15, 29, 119),rgb(43, 99, 122));
+}
+.icon{
+    color: blue;
+    font-size: bold;
+}
+#logo{
+    height: 40px;
+    width: 40px;
+    border: 0px solid white;
+    border-radius: 50px;
+}
+#navbarSupportedContent ul li:hover{
+    background-color: blue;
+    border-radius: 5px 5px 5px 5px;
+}
+#navbarSupportedContent ul li a:hover{
+    color: white;
+}
+.slider{
+    border: 1px solid white;
+    border-radius: 10px 10px 10px 10px;
+}
+.footer{
+    background-color: blue;
+}
+.footerNav{
+    text-decoration: none;
+}
+.followUs a{
+    text-decoration: none;
+    color: white;
+}
+#records{
+    background-color: #909ce8;
+    border-radius: 10px 10px 10px 10px;
+}
+.cardbody{
+    height: 75px;
+    background-color: #909ce8;
+    border-radius: 5px 5px 5px 5px;
+}
+#back{
+    background-color: rgb(193, 197, 199);
+    border-radius: 10px 10px 10px 10px;
+}
+.sellerLogin{
+    background-image:linear-gradient(to right,rgb(46, 59, 139),rgb(75, 143, 171));
+}
+
+.bt:hover{
+    background-color: #3b7ddd;
+}
+
+
+
+/* add home for rent css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    border-radius: 1rem !important;
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+.btn-success {
+    font-size: 1rem;
+    border-radius: 0.5rem;
+}

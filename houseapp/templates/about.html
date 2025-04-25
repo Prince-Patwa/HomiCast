@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<div class="row">
+    <div class="col-sm-11 mx-auto position-relative">
+        <img src="{% static 'images/about.png' %}"
+            class="img-fluid border border-1 border-white rounded-3 w-100 aboutImg" alt="Sample Image">
+        <div
+            class="position-absolute top-50 start-50 text-end translate-middle text-primary fs-1 fw-semibold px-3 py-2 rounded">
+            The new way of buying and selling homes in India.
+        </div>
+    </div>
+</div>
+<div class="row my-5">
+    <div class="col-sm-9 mx-auto">
+        <p class="fs-5 text-primary fw-semibold" style="text-align: justify;">
+            HomiCast is reinventing the real estate brokerage. By building our company from the ground up with the right
+            technology driven approach, we're able to execute transactions much more efficiently and save our customers
+            a lot of money. And just to clarify, HomiCast's customers are in fact “the buyers and sellers of the real
+            estate!”
+            <br />
+            Streamlined, stress-free home shopping - it's about time!
+        </p>
+    </div>
+</div>
+<div class="row" id="records">
+    <div class="col-sm-10 mx-auto">
+        <div class="row text-center my-5">
+            <div class="col-sm-4">
+                <h1 class="fw-bold">Over 25 lakh records</h1>
+                <p>Our database has information on all home sales in Bangalore since 2015</p>
+            </div>
+            <div class="col-sm-4">
+                <h1 class="fw-bold">80 parameters</h1>
+                <p>Our algorithm considers variables like built-up area, proximity to schools and accessibility to
+                    transportation to determine a property's best price</p>
+            </div>
+            <div class="col-sm-4">
+                <h1 class="fw-bold">130-point checklist</h1>
+                <p>Our detailed home inspection process assesses aspects like quality of fixtures, plumbing and
+                    electrical to establish the best price</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row my-5">
+    <div class="col-sm-10 mx-auto">
+        <div class="row" id="records">
+            <div class="col-sm-12">
+                <h2 class="text-light">For home sellers</h2>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-sm-4 mt-5 text-center">
+                <div class="card-body">
+                    <img src="{% static 'images/about1.png' %}" alt="">
+                </div>
+                <div class="cardbody">
+                    <p>Get your preliminary offer in a few easy steps</p>
+                </div>
+            </div>
+            <div class="col-sm-4 text-center">
+                <div class="card-body">
+                    <img src="{% static 'images/about2.svg' %}" alt="">
+                </div>
+                <div class="cardbody">
+                    <p>Schedule an inspection and review, we handle the paperwork so that you can get paid within 15 days</p>
+                </div>
+            </div>
+            <div class="col-sm-4 text-center">
+                <div class="card-body">
+                    <img src="{% static 'images/about3.svg' %}" alt="">
+                </div>
+                <div class="cardbody">
+                    <p>Complete registration and receive payment. We manage all the paperwork</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-10 mx-auto">
+        <div class="row" id="records">
+            <div class="col-sm-12">
+                <h2 class="text-light">For brokers or agents</h2>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-sm-12">
+                <p class="fs-5 text-primary fw-semibold" style="text-align: justify;">
+                    Ivy Homes is technology company that buys and sells houses in Bengaluru. We help seller with instant sale and buyers with renovated homes while making the process Hassle-free.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-10 mx-auto">
+        <div class="row" id="records">
+            <div class="col-sm-12">
+                <h2 class="text-light">Meet the team</h2>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-sm-6">
+                
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-sm-6">
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block title %}
+About Us
+{% endblock %}

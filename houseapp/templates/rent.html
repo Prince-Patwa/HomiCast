@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<div class="row">
+    <div class="col-sm-10 mx-auto">
+        <div class="row">
+            
+            {% for rent in rents %}
+            <div class="col-lg-4 my-4">
+                <img class="thumbnail w-100" src="{{rent.image.url}}">
+                <div class="box-element product">
+                    <h4 style="display: inline-block;"><strong>₹ {{rent.price}}</strong></h4>
+                    <h6 style="display: inline-block; float:right;"><strong>{{rent.apartment}} BHK</strong></h6>
+                    <p><strong>Location : </strong>{{rent.location}}</p>
+                    <span style="display: inline-block; float:right;"><strong>House ID :</strong> {{rent.hid}}</span>
+                    <p><strong>Owner ID :</strong> {{rent.emailId}}</p>
+                    <hr>
+                    <a href="{% url 'rentSendOtp' %}" data-product="{{rent.hid}}" data-action=""
+                        class="btn btn-outline-secondary add-btn update-cart">Contact</a>
+
+                    <a class="btn btn-outline-success" href="{{rent.pimages.url}}" target="_blank">View Images</a>
+                </div>
+            </div>
+            {% endfor %}
+
+            <!--paginator-->
+            <nav aria-label="Page navigation example text-center">
+                <ul class="pagination">
+                  {% if rents.has_previous %}  <!--has_previous gives paginat -->
+                  <li class="page-item"><a class="page-link" href="/rent/?page=1" tabindex="-1">First</a></li>
+                  <li class="page-item"><a class="page-link" href="/rent/?page={{rents.previous_page_number}}" tabindex="-1">Previous</a></li><!--"rents.previous_page_number" automaticaly get what is page number -->
+                  {% endif %}
+
+                  {% for n in totalPageList %}
+                  <li class="page-item"><a class="page-link" href="/rent/?page={{n}}">{{n}}</a></li>
+                  {% endfor %}
+
+                  {% if rents.has_next %}
+                  <li class="page-item"><a class="page-link" href="/rent/?page={{rents.next_page_number}}">Next</a></li>
+                  <li class="page-item"><a class="page-link" href="/rent/?page={{lastpage}}">Last</a></li>
+                  {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block title %}
+Rent
+{% endblock %}

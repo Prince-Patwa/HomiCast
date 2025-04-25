@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% load static %}
+
+<div class="row mt-2">
+    <div class="col-sm-10 mx-auto" id="records">
+        <h1 class="text-center text-white">Contact Us</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-10 mx-auto mt-3">
+        <div class="row">
+            {% if msg %}
+            <div class="col-sm-12">
+                <div class="alert alert-success" role="alert">{{msg}}</div>
+            </div>
+            {% endif %}
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.3078050255717!2d81.88337667522487!3d26.925454776639558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3999f62995555555%3A0x7136cb31bfaea5ff!2sGovernment%20Polytechnic%20Aadampur%20Tarabganj%20Gonda!5e0!3m2!1sen!2sin!4v1732014360252!5m2!1sen!2sin"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                {% comment %} <h5>Principal</h5> {% endcomment %}
+                <h5 class="mx-5"><i class="fa-regular fa-envelope"></i>
+                    Email: abc@gmail.com</h5>
+            </div>
+            <div class="col-sm-6 border border-3 border-secondary">
+                <form class="row g-3" method="post">
+                    {% csrf_token %}
+                    <div class="col-md-12">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" name="name" class="form-control" id="name">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="grender" name="gender" class="form-label">Gender</label>
+                        <input type="radio" name="gender" class="form-check-input" value="Male">Male
+                        <input type="radio" name="gender" class="form-check-input" value="Female">Female
+                        <input type="radio" name="gender" class="form-check-input" value="Other">other
+                    </div>
+                    <div class="col-md-12">
+                        <label for="address" class="form-label">Address</label>
+                        <textarea type="text" name="address" class="form-control" id="address"></textarea>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="contact" class="form-label">Contact</label>
+                        <input type="number" name="contact" class="form-control" id="contact">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="email" class="form-label">Email Id</label>
+                        <input type="email" name="emailaddress" class="form-control" id="email">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="enquiry" class="form-label">Enquiry Text</label>
+                        <textarea type="text" name="enquirytext" class="form-control" id="enquirytext"></textarea>
+                    </div>
+                    <div class="col-12 text-center pb-3">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row p-5">
+            <div class="col-sm-6">
+                <h5>Contact Info</h5>
+                <p><i class="fa-solid fa-location-dot"></i> Address: Government Polytechinic Aadampur, Tarabganj, Gonda</p>
+                <p><i class="fa-solid fa-phone-volume"></i> Phone: +91 9506006286</p>
+                <p><i class="fa-regular fa-envelope"></i> Email: abc@gmail.com</p>
+            </div>
+            <div class="col-sm-6">
+                <h5>Office Timing</h5>
+                <p><i class="fa-solid fa-clock"></i> 10:00 am – 07:00 pm</p>
+                {% comment %} <p><i class="fa-solid fa-clock"></i> Winters : 09:00 am – 03:00 pm</p> {% endcomment %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block title %}
+Contact Us
+{% endblock %}

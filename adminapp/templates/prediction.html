@@ -1,0 +1,128 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block admin %}
+<div class="row bg-secondary">
+    <div class="col-sm-12">
+        <div class="row my-3">
+            <div class="col-sm-9 mx-auto" id="records">
+                <h1 class="text-center text-white">Prediction</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8 mx-auto">
+                {% if predicted_price %}
+                        <h2>Predicted House Price: ${{ predicted_price }}</h2>
+                {% endif %}
+                {% if error %}
+                <p style="color: red;">{{ error }}</p>
+                {% endif %}
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td>Crime Rate</td>
+                                        <td>
+                                            <input type="text" name="CRIM" class="form-control" placeholder="" />
+                                        </td>
+                                    </tr>
+                                    {% comment %} <tr>
+                                        <td>Gender</td>
+                                        <td>
+                                            <input type="radio" name="gender" value="Male" class="" />Male
+                                            <input type="radio" name="gender" value="Female" class="" />Female
+                                        </td>
+                                    </tr> {% endcomment %}
+                                    <tr>
+                                        <td>Residential Zoning</td>
+                                        <td>
+                                            <input type="text" name="ZN" class="form-control" placeholder="" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Industrial Proportion</td>
+                                        <td>
+                                            <input type="text" name="INDUS" class="form-control" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>River Bound</td>
+                                        <td>
+                                            <input type="text" name="CHAS" class="form-control" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>NO x Concentration</td>
+                                        <td>
+                                            <input type="text" name="NOX" class="form-control" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Avg Rooms</td>
+                                        <td>
+                                            <input type="text" name="RM" class="form-control" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pre 1940 Owner Units</td>
+                                        <td>
+                                            <input type="text" name="AGE" class="form-control" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dist To Employ Centers</td>
+                                        <td>
+                                            <input type="text" name="DIS" class="form-control" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Radial Access Index</td>
+                                        <td>
+                                            <input type="text" name="RAD" class="form-control" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tax Rate Per 10k</td>
+                                        <td>
+                                            <input type="text" name="TAX" class="form-control" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pupil Teacher Ratio</td>
+                                        <td>
+                                            <input type="text" name="PTRATIO" class="form-control" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Black Proportion Squared</td>
+                                        <td>
+                                            <input type="text" name="B" class="form-control" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lower Status Percentage</td>
+                                        <td>
+                                            <input type="text" name="LSTAT" class="form-control" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="text-center">
+                                            <button class="btn btn-success" type="submit">Predict</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block title %}
+Prediction
+{% endblock %}
