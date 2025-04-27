@@ -13,9 +13,9 @@ def sellerhome(req):
 
 def addForSell(req):
     try:
-        if req.session['ownerid']!=None:
-            ownerid=req.session['ownerid']
-            owner=Registration.objects.get(emailaddress=ownerid)
+        if req.session['sellerid']!=None:
+            sellerid=req.session['sellerid']
+            seller=Registration.objects.get(emailaddress=sellerid)
             if req.method=="POST":
                 image=req.FILES['image']
                 price=req.POST['price']
@@ -25,34 +25,37 @@ def addForSell(req):
                 pimages=req.FILES['pimages']
                 add_date=timezone.now()
                 if not image:
-                    return render(req, 'addrent.html', {'error': 'Image is required'})
-                addsell=AddSell(image=image,price=price,apartment=apartment,area=area,location=location,pimages=pimages,add_date=add_date,emailId=owner.emailaddress,name=owner.name)
+                    return render(req, 'addsell.html', {'error': 'Image is required'})
+                addsell=AddSell(image=image,price=price,apartment=apartment,area=area,location=location,pimages=pimages,add_date=add_date,emailId=seller.emailaddress,name=seller.name)
                 addsell.save()
-                return redirect('renter_buyer_app:viewsell')
+                return redirect('renter_buyer_app:viewAddedHome')
             return render(req,'addForSell.html')
     except KeyError:
         return redirect('login')
     # return render(req,'addForSell.html')
 
-def viewsell(req):
-    return render(req,'viewsell.html')
+def viewAddedHome(req):
+    return render(req,'viewAddedHome.html')
+
+# def sellerViewEnquiry(req):
+#     try:
+#         sellerid = req.session.get('sellerid')  # Safely get session data
+#         if sellerid:
+#             sell_otp_entry = rentOTP.objects.filter(sellerID=sellerid).first()
+#             if sell_otp_entry:
+#                 enq = rentOTP.objects.filter(sellerID=sellerid)  # Filter by sellerid
+#                 return render(req, 'sellerViewEnquiry.html', {'sellerid': sellerid, 'enq': enq})
+#             else:
+#                 # No entries found, redirect or show an empty response
+#                 return render(req, 'sellerViewEnquiry.html', {'sellerid': sellerid, 'enq': []})
+#         else:
+#             # If sellerid is not in the session, redirect to login
+#             return redirect('login')
+#     except Exception as e:
+#         # Log the exception (optional)
+#         # print(f"Error in sellerViewEnquiry: {e}")
+#         return redirect('sellerhome')  # Redirect to seller home in case of any error
+#     # return render(req,'sellerViewEnquiry.html')
 
 def sellerViewEnquiry(req):
-    try:
-        sellerid = req.session.get('sellerid')  # Safely get session data
-        if sellerid:
-            sell_otp_entry = rentOTP.objects.filter(sellerID=sellerid).first()
-            if sell_otp_entry:
-                enq = rentOTP.objects.filter(sellerID=sellerid)  # Filter by sellerid
-                return render(req, 'sellerViewEnquiry.html', {'sellerid': sellerid, 'enq': enq})
-            else:
-                # No entries found, redirect or show an empty response
-                return render(req, 'sellerViewEnquiry.html', {'sellerid': sellerid, 'enq': []})
-        else:
-            # If sellerid is not in the session, redirect to login
-            return redirect('login')
-    except Exception as e:
-        # Log the exception (optional)
-        # print(f"Error in sellerViewEnquiry: {e}")
-        return redirect('sellerhome')  # Redirect to seller home in case of any error
-    # return render(req,'sellerViewEnquiry.html')
+    return render(req,'sellerViewEnquiry.html')

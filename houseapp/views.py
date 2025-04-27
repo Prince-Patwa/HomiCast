@@ -19,12 +19,14 @@ from django.http import HttpResponse
 def index(req):
     sells = AddSell.objects.all()
     rents = AddRent.objects.all()
-    paginator = Paginator(rents,3)
+    paginator1 = Paginator(rents,3)
+    paginator2 = Paginator(sells,3)
     pageNumber = req.GET.get('page')
-    serviceDataFinal = paginator.get_page(pageNumber)
+    serviceDataFinal1 = paginator1.get_page(pageNumber)
+    serviceDataFinal2 = paginator2.get_page(pageNumber)
     data={
-        'rents':serviceDataFinal,
-        'sells':sells,
+        'rents':serviceDataFinal1,
+        'sells':serviceDataFinal2,
     }
     return render(req, 'index.html',data)
 
@@ -141,7 +143,17 @@ def sell(req):
         st=req.POST['search']
         if st != None:
             sells = AddSell.objects.filter(location__icontains=st) #wher __icontains is searching from left & right both in a string "location" or given from DB
-    return render(req,'sell.html',{'sells':sells})
+    #for pagination
+    paginator = Paginator(sells,6)
+    pageNumber = req.GET.get('page')
+    serviceDataFinal = paginator.get_page(pageNumber)
+    totalpage = serviceDataFinal.paginator.num_pages 
+    data={
+        'sells':serviceDataFinal,
+        'lastpage':totalpage,
+        'totalPageList':[n+1 for n in range(totalpage)]
+    }
+    return render(req,'sell.html',data)
 
 def generate_otp():
     """Generate a 6-digit OTP."""

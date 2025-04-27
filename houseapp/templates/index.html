@@ -80,10 +80,10 @@
                     <span style="display: inline-block; float:right;"><strong>House ID :</strong> {{sell.hid}}</span>
                     <p><strong>Owner ID :</strong> {{sell.emailId}}</p>
                     <hr>
-                    <a href="{% url 'rentSendOtp' %}" data-product="{{rent.hid}}" data-action=""
+                    <a href="{% url 'rentSendOtp' %}" data-product="{{sell.hid}}" data-action=""
                         class="btn btn-outline-secondary add-btn update-cart">Contact</a>
 
-                    <a class="btn btn-outline-success" href="{{rent.pimages.url}}" target="_blank">View Images</a>
+                    <a class="btn btn-outline-success" href="{{sell.pimages.url}}" target="_blank">View Images</a>
                 </div>
             </div>
         {% endfor %}

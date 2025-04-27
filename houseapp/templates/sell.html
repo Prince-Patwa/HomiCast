@@ -30,10 +30,10 @@
                     <span style="display: inline-block; float:right;"><strong>House ID :</strong> {{sell.hid}}</span>
                     <p><strong>Owner ID :</strong> {{sell.emailId}}</p>
                     <hr>
-                    <a href="{% url 'rentSendOtp' %}" data-product="{{rent.hid}}" data-action=""
+                    <a href="{% url 'rentSendOtp' %}" data-product="{{sell.hid}}" data-action=""
                         class="btn btn-outline-secondary add-btn update-cart">Contact</a>
 
-                    <a class="btn btn-outline-success" href="{{rent.pimages.url}}" target="_blank">View Images</a>
+                    <a class="btn btn-outline-success" href="{{sell.pimages.url}}" target="_blank">View Images</a>
                 </div>
             </div>
 
@@ -41,6 +41,25 @@
             No record Found...
 
             {% endfor %}
+
+            <!--paginator-->
+            <nav aria-label="Page navigation example text-center">
+                <ul class="pagination">
+                  {% if sells.has_previous %}  <!--has_previous gives paginat -->
+                  <li class="page-item"><a class="page-link" href="/rent/?page=1" tabindex="-1">First</a></li>
+                  <li class="page-item"><a class="page-link" href="/rent/?page={{sells.previous_page_number}}" tabindex="-1">Previous</a></li><!--"rents.previous_page_number" automaticaly get what is page number -->
+                  {% endif %}
+
+                  {% for n in totalPageList %}
+                  <li class="page-item"><a class="page-link" href="/sell/?page={{n}}">{{n}}</a></li>
+                  {% endfor %}
+
+                  {% if sells.has_next %}
+                  <li class="page-item"><a class="page-link" href="/sell/?page={{sells.next_page_number}}">Next</a></li>
+                  <li class="page-item"><a class="page-link" href="/sell/?page={{lastpage}}">Last</a></li>
+                  {% endif %}
+                </ul>
+            </nav>
 
         </div>
     </div>
