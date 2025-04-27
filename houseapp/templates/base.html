@@ -9,6 +9,34 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" />
+  <style>
+    .hero-section {
+      background: url('https://images.unsplash.com/photo-1560185127-6a8c6e6c8f4c?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      height: 40vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    .overlay {
+      position: absolute;
+      top:0; left:0; right:0; bottom:0;
+      background: rgba(0,0,0,0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .city-card img {
+      height: 200px;
+      object-fit: cover;
+    }
+    .testimonial {
+      font-style: italic;
+    }   
+  </style>
   
 </head>
 <body>

@@ -117,6 +117,11 @@ def logcode(req):
 
 def rent(req):
     rents = AddRent.objects.all()
+    #for searching operation
+    if req.method=="POST":
+        st=req.POST['search']
+        if st != None:
+            rents = AddRent.objects.filter(location__icontains=st) #wher __icontains is searching from left & right both in a string "location" or given from DB
     #for pagination
     paginator = Paginator(rents,6)
     pageNumber = req.GET.get('page')
@@ -131,6 +136,11 @@ def rent(req):
 
 def sell(req):
     sells = AddSell.objects.all()
+    #for searching operation
+    if req.method=="POST":
+        st=req.POST['search']
+        if st != None:
+            sells = AddSell.objects.filter(location__icontains=st) #wher __icontains is searching from left & right both in a string "location" or given from DB
     return render(req,'sell.html',{'sells':sells})
 
 def generate_otp():
