@@ -3,7 +3,20 @@
 {% block body %}
 <!-- Responsive container -->
 <div class="container-fluid px-3">
+<!-- Hero Section -->
+<div class="hero-section position-relative">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1 class="display-4 fw-bold">Find Your Dream Home Today</h1>
+      <p class="lead mb-4">Affordable. Trusted. Easy Rentals.</p>
+      <form class="d-flex justify-content-center">
+        <input type="text" class="form-control w-50 me-2" placeholder="Enter City or Area">
+        <button class="btn btn-warning">Search</button>
+      </form>
+    </div>
+  </div>
 
+{% comment %}   
     <!-- Slider Start -->
     <div class="row">
         <div class="col-12 mx-auto">
@@ -22,7 +35,49 @@
             </div>
         </div>
     </div>
-    <!-- Slider End -->
+    <!-- Slider End --> {% endcomment %}
+<!-- Popular Locations -->
+<section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">Popular Locations</h2>
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="card city-card">
+            <img src=" { % static'images/h1.jpeg' % }" class="card-img-top" alt="Delhi">
+            <div class="card-body text-center">
+              <h5 class="card-title">Delhi</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card city-card">
+            <img src="{ % static'images/h2.jpeg' % }" class="card-img-top" alt="Mumbai">
+            <div class="card-body text-center">
+              <h5 class="card-title">Mumbai</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card city-card">
+            <img src="{ % static'images/rent2.png' % }"  class="card-img-top" alt="Bangalore">
+            <div class="card-body text-center">
+              <h5 class="card-title">Bangalore</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card city-card">
+            <img src=" { % static'images/rent2.png' % } " class="card-img-top" alt="Hyderabad">
+            <div class="card-body text-center">
+              <h5 class="card-title">Hyderabad</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    
 
     <!-- Buy Section -->
     <div class="row mt-4">
