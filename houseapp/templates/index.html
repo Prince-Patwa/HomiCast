@@ -1,6 +1,8 @@
 {% extends 'base.html' %} 
 {% load static %}
 {% block body %}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 <!-- Responsive container -->
 <div class="container-fluid px-3">
  <!-- Slider Start -->
@@ -25,7 +27,7 @@
 <!-- Popular Locations -->
 <section class="py-5 bg-light">
     <div class="container">
-      <h2 class="text-center mb-5">Popular Locations</h2>
+      <h2 class="text-center mb-5 thumbnail bg-primary">Popular Locations</h2>
       <div class="row g-4">
         <div class="col-md-3">
           <div class="card city-card">
@@ -191,6 +193,32 @@
         {% endfor %}
     </div>
     <!-- Rent Section End -->
+
+
+    <!-- Why Choose Us -->
+<section class="py-5">
+    <div class="container text-center">
+      <h2 class="mb-5">Why Choose HomeRent?</h2>
+      <div class="row g-4">
+        <div class="col-md-3">
+          <h5><i class="fa-solid fa-house"></i> 100% Verified</h5>
+          <p>No fake listings. Only real homes.</p>
+        </div>
+        <div class="col-md-3">
+          <h5><i class="fa-solid fa-wallet"></i> Affordable Prices</h5>
+          <p>Homes for every budget.</p>
+        </div>
+        <div class="col-md-3">
+          <h5><i class="fa-solid fa-thumbs-up"></i> Trusted Owners</h5>
+          <p>Background verified owners.</p>
+        </div>
+        <div class="col-md-3">
+          <h5><i class="fa-solid fa-phone"></i> Fast Booking</h5>
+          <p>Quick and easy rental process.</p> 
+        </div>
+      </div>
+    </div>
+  </section>
 
 </div>
 

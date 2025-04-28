@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block body %}
+
 <div class="row">
     <div class="col-sm-11 mx-auto position-relative">
         <img src="{% static 'images/about.png' %}"
@@ -103,18 +104,65 @@
                 <h2 class="text-light">Meet the team</h2>
             </div>
         </div>
-        <div class="row my-5">
-            <div class="col-sm-6">
-                
+
+
+        <section class="py-5">
+            <div class="container text-center">
+              <h2 class="mb-5">Our Team Meambers</h2>
+              <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'images/s1.jpeg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Dhirendra Gupta</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'images/s1.jpeg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Dhirendra Gupta</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'images/s1.jpeg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Dhirendra Gupta</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                      </div>
+                </div>
+              </div>
             </div>
+          </section>
+        
         </div>
-        <div class="row my-5">
-            <div class="col-sm-6">
-                
-            </div>
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
 </div>
+
+
+                 
+
+
 {% endblock %}
 
 {% block title %}
