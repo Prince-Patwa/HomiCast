@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block body %}
+
 <div class="row">
     <div class="col-sm-11 mx-auto position-relative">
-        <img src="{% static 'images/about.png' %}"
+        <img src="{% static 'images/aboutus.jpeg' %}"
             class="img-fluid border border-1 border-white rounded-3 w-100 aboutImg" alt="Sample Image">
         <div
-            class="position-absolute top-50 start-50 text-end translate-middle text-primary fs-1 fw-semibold px-3 py-2 rounded">
+            class="position-absolute top-50 start-50 text-center translate-middle text-primary fs-1 fw-semibold px-3 py-2 rounded">
             The new way of buying and selling homes in India.
         </div>
     </div>
@@ -27,18 +28,18 @@
     <div class="col-sm-10 mx-auto">
         <div class="row text-center my-5">
             <div class="col-sm-4">
-                <h1 class="fw-bold">Over 25 lakh records</h1>
-                <p>Our database has information on all home sales in Bangalore since 2015</p>
+                <h1 class="fw-bold">Over 25 Lakh Records</h1>
+                <p>Our database has information on all home sales in Bangalore since 2015.</p>
             </div>
             <div class="col-sm-4">
-                <h1 class="fw-bold">80 parameters</h1>
+                <h1 class="fw-bold">80 Parameters</h1>
                 <p>Our algorithm considers variables like built-up area, proximity to schools and accessibility to
-                    transportation to determine a property's best price</p>
+                    transportation to determine a property's best price.</p>
             </div>
             <div class="col-sm-4">
                 <h1 class="fw-bold">130-point checklist</h1>
                 <p>Our detailed home inspection process assesses aspects like quality of fixtures, plumbing and
-                    electrical to establish the best price</p>
+                    electrical to establish the best price.</p>
             </div>
         </div>
     </div>
@@ -47,7 +48,7 @@
     <div class="col-sm-10 mx-auto">
         <div class="row" id="records">
             <div class="col-sm-12">
-                <h2 class="text-light">For home sellers</h2>
+                <h2 class="text-light text-center">For Home Sellers</h2>
             </div>
         </div>
         <div class="row my-5">
@@ -55,24 +56,24 @@
                 <div class="card-body">
                     <img src="{% static 'images/about1.png' %}" alt="">
                 </div>
-                <div class="cardbody">
-                    <p>Get your preliminary offer in a few easy steps</p>
+                <div class="card-body" id="records">
+                    <p>Get your preliminary offer in a few easy steps <br>Get Some Extra Offer If You Buy Homes.</p>
                 </div>
             </div>
             <div class="col-sm-4 text-center">
                 <div class="card-body">
                     <img src="{% static 'images/about2.svg' %}" alt="">
                 </div>
-                <div class="cardbody">
-                    <p>Schedule an inspection and review, we handle the paperwork so that you can get paid within 15 days</p>
+                <div class="card-body" id="records">
+                    <p>Schedule an inspection and review, we handle the paperwork so that you can get paid within 15 days.</p>
                 </div>
             </div>
             <div class="col-sm-4 text-center">
                 <div class="card-body">
                     <img src="{% static 'images/about3.svg' %}" alt="">
                 </div>
-                <div class="cardbody">
-                    <p>Complete registration and receive payment. We manage all the paperwork</p>
+                <div class="card-body" id="records">
+                    <p>Complete registration and receive payment. We manage all the paperwork.</p>
                 </div>
             </div>
         </div>
@@ -83,14 +84,17 @@
     <div class="col-sm-10 mx-auto">
         <div class="row" id="records">
             <div class="col-sm-12">
-                <h2 class="text-light">For brokers or agents</h2>
+                <h2 class="text-light text-center">For Brokers Or Agents</h2>
             </div>
         </div>
         <div class="row my-5">
             <div class="col-sm-12">
                 <p class="fs-5 text-primary fw-semibold" style="text-align: justify;">
-                    Ivy Homes is technology company that buys and sells houses in Bengaluru. We help seller with instant sale and buyers with renovated homes while making the process Hassle-free.
-                </p>
+                    A broker or agent acts as an intermediary between buyers and sellers, helping clients carry out transactions efficiently. 
+                    Brokers typically work in fields like real estate, finance, insurance, or commodities.
+                     They earn a commission or fee for their services, using their expertise to negotiate deals, 
+                     provide market insights, and ensure legal and contractual compliance.
+                     Agents represent their clients’ interests, aiming to get the best possible outcome in a deal.                </p>
             </div>
         </div>
     </div>
@@ -100,21 +104,50 @@
     <div class="col-sm-10 mx-auto">
         <div class="row" id="records">
             <div class="col-sm-12">
-                <h2 class="text-light">Meet the team</h2>
+                <h2 class="text-light text-center">Our Team Meambers</h2>
             </div>
         </div>
-        <div class="row my-5">
-            <div class="col-sm-6">
-                
+
+
+        <section class="py-5">
+            <div class="container">
+             <div class="row g-4 ">
+                <div class="col-md-4 ">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'images/dhir.jpg' %}" class="card-img-top" alt="..." >
+                        <div class="card-body">
+                          <h5 class="card-title text-center">Dhirendra Gupta</h5>
+                          <h6 class="text-center">Full Stack Devloper</h6>
+                          <p class="card-text text-bold">Computer Science And Engineering</p>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'images/b.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center">Bajrangi Patwa</h5>
+                          <h6 class="text-center">Full Stack Devloper</h6>
+                          <p class="card-text">Computer Science And Engineering</p>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-rounded" style="width: 18rem;">
+                        <img src="{% static 'images/s1.jpeg' %}" class="card-img-top "  alt="..." >
+                        <div class="card-body">
+                          <h5 class="card-title text-center">Prinshu Aryan</h5>
+                          <h6 class="text-center">Front-End Devloper</h6>
+                          <p class="card-text">Computer Science And Engineering</p>
+                        </div>
+                      </div>
+                </div>
+              </div>
             </div>
-        </div>
-        <div class="row my-5">
-            <div class="col-sm-6">
-                
-            </div>
+          </section>
+        
         </div>
     </div>
-</div>
 {% endblock %}
 
 {% block title %}
