@@ -24,43 +24,49 @@
         </div>
     </div>
     <!-- Slider End --> 
+</div>
 <!-- Popular Locations -->
-<section class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center mb-5 thumbnail bg-primary">Popular Locations</h2>
-      <div class="row g-4">
+<div class="col-12 mx-auto text-center mt-5">
+    <h2 class="text-white" id="records">Popular Location</h2>
+     </div>
+        <div class="row g-4">
+            
         <div class="col-md-3">
           <div class="card city-card">
         <img src=" {% static 'images/whyHomi4.png' %}"  class="card-img-top" alt="Bangalore">
             <div class="card-body text-center">
-              <h5 class="card-title">Delhi</h5>
+              <h5 class="card-title">Gonda</h5>
             </div>
           </div>
         </div>
+
         <div class="col-md-3">
           <div class="card city-card">
             <img src=" {% static 'images/h1.jpeg' %}" class="card-img-top" alt="Mumbai">
             <div class="card-body text-center">
-              <h5 class="card-title">Mumbai</h5>
+              <h5 class="card-title">Gorakhpur</h5>
             </div>
           </div>
         </div>
+
         <div class="col-md-3">
           <div class="card city-card">
             <img src=" {% static 'images/h2.jpeg' %}" class="card-img-top" alt="Bangalore">
             <div class="card-body text-center">
-              <h5 class="card-title">Bangalore</h5>
+              <h5 class="card-title">Kushinagar</h5>
             </div>
           </div>
         </div>
+
         <div class="col-md-3">
           <div class="card city-card">
             <img src=" {% static 'images/h1.jpeg' %}"  class="card-img-top" alt="Hyderabad">
             <div class="card-body text-center">
-              <h5 class="card-title">Hyderabad</h5>
+              <h5 class="card-title">Belsar</h5>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -195,31 +201,37 @@
     <!-- Rent Section End -->
 
 
-    <!-- Why Choose Us -->
-<section class="py-5">
-    <div class="container text-center">
-      <h2 class="mb-5">Why Choose HomeRent?</h2>
-      <div class="row g-4">
-        <div class="col-md-3">
-          <h5><i class="fa-solid fa-house"></i> 100% Verified</h5>
-          <p>No fake listings. Only real homes.</p>
-        </div>
-        <div class="col-md-3">
-          <h5><i class="fa-solid fa-wallet"></i> Affordable Prices</h5>
-          <p>Homes for every budget.</p>
-        </div>
-        <div class="col-md-3">
-          <h5><i class="fa-solid fa-thumbs-up"></i> Trusted Owners</h5>
-          <p>Background verified owners.</p>
-        </div>
-        <div class="col-md-3">
-          <h5><i class="fa-solid fa-phone"></i> Fast Booking</h5>
-          <p>Quick and easy rental process.</p> 
-        </div>
-      </div>
+    <!-- My Services-->
+    <div class="col-sm-12  text-center pt-4">
+      <h2  id="records">Our Services</h2>
     </div>
-  </section>
-
+      <div class="row g-4 py-4">
+        <div class="col-sm-10 mx-auto">
+            <div class="row">
+                <div class="col-md-3 ">
+                    <img src=" {% static 'images/sell.png' %}" class="card-img-top " alt="Mumbai" height="150px">
+                    <h5 class="text-center"><i class="fa-solid fa-wallet "></i> Sell</h5>
+                    <p>Sell Home means to transfer ownership of a house to a buyer in exchange for money, usually through a sale agreement..</p>
+                  </div>
+                  <div class="col-md-3">
+                    <img src=" {% static 'images/lrent.jpeg' %}" class="card-img-top " alt="Mumbai" height="150px">
+                    <h5 class="text-center"><i class="fa-solid fa-wallet "></i> Rent</h5>
+                    <p>Rent is a regular payment made by a tenant to a landlord for using property, land, or equipment.</p>
+                  </div>
+                  <div class="col-md-3">
+                    <img src=" {% static 'images/enq.png' %}" class="card-img-top " alt="Mumbai" height="150px">
+                    <h5 class="text-center"><i class="fa-solid fa-thumbs-up "></i> Enquiry</h5>
+                    <p>"Enquiry per" usually refers to the number of enquiries made per specific unit, like per day or per customer.</p>
+                  </div>
+                  <div class="col-md-3">
+                    <img src=" {% static 'images/login.jpeg' %}" class="card-img-top " alt="Mumbai" height="150px">
+                    <h5  class="text-center"><i class="fa-solid fa-phone text-center"></i> Login</h5>
+                    <p class="">Login is the process of accessing a system or website by entering a username and password to verify your identity
+                        .</p> 
+                  </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock %}
